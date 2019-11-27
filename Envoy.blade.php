@@ -1,4 +1,5 @@
-@servers(['aws' => '-i /home/jd/curso-envoy-aws.pen ubuntu@3.16.13.217'])
+@servers(['aws' => '-i ~/curso-envoy-aws.pen ubuntu@3.16.13.217'])
+@servers(['aws' => '-i / ubuntu@3.16.13.217'])
 @include('vendor/autoload.php')
 
 
@@ -18,6 +19,15 @@ throw  new Exception('La variable --on no esta definida');
    git clone {{ $origin }} ;
    echo "Repositorio clonado correctamente";
 @endtask
+
+
+@task('git:pull', ['on' => $on])
+        cd {{ $app_dir }}
+        echo("Hemos entrado en el directorio {{ $app_dir }}");
+        git pull origin {{ $branch }}
+        echo "Codigo actualizado correctamente ";
+@endtask
+
 
 
 
