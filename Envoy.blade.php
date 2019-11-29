@@ -1,5 +1,6 @@
-@servers(['aws' => '-i ~/curso-envoy-aws.pen ubuntu@3.16.13.217'])
-@servers(['aws' => '-i / ubuntu@3.16.13.217'])
+@servers(['aws' => 'ubuntu@3.16.13.217'])
+
+
 @include('vendor/autoload.php')
 
 
@@ -28,6 +29,10 @@ throw  new Exception('La variable --on no esta definida');
         echo "Codigo actualizado correctamente ";
 @endtask
 
+
+@task('test')
+echo "TAREA"
+@endtask
 
 
 

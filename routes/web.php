@@ -17,6 +17,10 @@ Route::get('/', function () {
 
 
 
+
+
+
+
 Route::get('/test', function () {
-    return view('HOLA TEST  david');
+    return view('HOLA este archivo se subion con un check desde deploy');
 });
